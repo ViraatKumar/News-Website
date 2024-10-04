@@ -9,7 +9,9 @@ const App = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/news");
+        const response = await axios.get(
+          "https://news-website-lex2.onrender.com/news"
+        );
         setNews(response.data.articles);
       } catch (error) {
         console.error("Error fetching news:", error);
@@ -22,7 +24,7 @@ const App = () => {
     if (!query) return;
     try {
       const response = await axios.get(
-        `http://localhost:5000/news/search?q=${query}`
+        `https://news-website-lex2.onrender.com/search?q=${query}`
       );
       setNews(response.data.articles);
     } catch (error) {
